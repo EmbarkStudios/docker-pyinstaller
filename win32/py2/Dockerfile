@@ -1,10 +1,10 @@
-FROM ubuntu:14.04
+FROM ubuntu:bionic
 
 ENV DEBIAN_FRONTEND noninteractive
 
 ARG WINE_VERSION=winehq-devel
-ARG PYTHON_VERSION=2.7.12
-ARG PYINSTALLER_VERSION=3.3
+ARG PYTHON_VERSION=2.7.15
+ARG PYINSTALLER_VERSION=3.5
 
 # we need wine for this all to work, so we'll use the PPA
 RUN set -x \
