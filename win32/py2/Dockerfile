@@ -12,6 +12,9 @@ RUN set -x \
     && apt-get update -qy \
     && apt-get install --no-install-recommends -qfy software-properties-common \
     && add-apt-repository ppa:wine/wine-builds \
+    && wget -nv https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key \
+    && apt-key add Release.key \
+    && apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./' \
     && apt-get update -qy \
     && apt-get install --no-install-recommends -qfy $WINE_VERSION winetricks wget \
     && apt-get clean

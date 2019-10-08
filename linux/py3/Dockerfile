@@ -21,12 +21,14 @@ RUN \
         curl \
         git \
         libbz2-dev \
+        libffi-dev \
         libreadline-dev \
         libsqlite3-dev \
         libssl-dev \
-        zlib1g-dev \
+        zlib1g-dev
+RUN \
     # install pyenv
-    && echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc \
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc \
     && echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc \
     && source ~/.bashrc \
     && curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash \

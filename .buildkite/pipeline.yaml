@@ -14,11 +14,6 @@ steps:
       - buildah bud --format=docker --layers -t embarkstudios/pyinstaller:win64-py3 -f win64/py3/Dockerfile win64/py3
       - buildah push --authfile /root/.dockerhub/config.json embarkstudios/pyinstaller:win64-py3
 
-  - name: Windows python2
-    commands:
-      - buildah bud --format=docker --layers -t embarkstudios/pyinstaller:win64-py2 -f win64/py2/Dockerfile win64/py2
-      - buildah push --authfile /root/.dockerhub/config.json embarkstudios/pyinstaller:win64-py2
-
   - name: Windows 32-bit python3
     commands:
       - buildah bud --format=docker --layers -t embarkstudios/pyinstaller-windows:win32-py3 -f win32/py2/Dockerfile win32/py3
